@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mr. Scientist</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#071a2e,#0d2d4d,#154b7a);
+color:white;
+overflow:hidden;
+height:100vh;
+}
+
+.screen{
+display:none;
+height:100vh;
+width:100%;
+padding:30px;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+position:relative;
+}
+
+.active{
+display:flex;
+}
+
+h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+p{
+font-size:1.2rem;
+max-width:800px;
+line-height:1.7;
+}
+
+button{
+padding:15px 35px;
+margin:15px;
+border:none;
+border-radius:30px;
+font-size:1.1rem;
+cursor:pointer;
+transition:0.3s;
+background:#4fd1ff;
+color:#001b33;
+font-weight:bold;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+.dna{
+position:absolute;
+font-size:4rem;
+opacity:0.15;
+animation:float 8s infinite linear;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh) rotate(0deg);}
+100%{transform:translateY(-120vh) rotate(360deg);}
+}
+
+.question{
+font-size:2rem;
+margin-bottom:30px;
+}
+
+.result{
+font-size:1.5rem;
+margin-bottom:25px;
+color:#7dffb3;
+}
+
+.final-message{
+max-width:900px;
+font-size:1.25rem;
+line-height:2;
+overflow-y:auto;
+padding:20px;
+}
+
+.glow{
+color:#7de8ff;
+text-shadow:0 0 15px #7de8ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="dna" style="left:5%;">🧬</div>
+<div class="dna" style="left:20%;animation-delay:2s;">🧬</div>
+<div class="dna" style="left:40%;animation-delay:5s;">⚛️</div>
+<div class="dna" style="left:65%;animation-delay:1s;">🧬</div>
+<div class="dna" style="left:85%;animation-delay:4s;">🔬</div>
+
+<!-- Screen 1 -->
+<div class="screen active" id="s1">
+<h1 class="glow">Hello Mr. Scientist 👨‍🔬</h1>
+<p>
+Here is a sweet and slightly scientific way to wish you a Happy Birthday.
+Ready for a tiny challenge?
+</p>
+<br>
+<p><b>Wanna play a game, Mr. Scientist?</b></p>
+<div>
+<button onclick="next(2)">YES!</button>
+<button onclick="next(2)">Of Course!</button>
+</div>
+</div>
+
+<!-- Screen 2 -->
+<div class="screen" id="s2">
+<div class="question">
+If your birthday were an element,
+what would its symbol be?
+</div>
+
+<button onclick="showResult(3)">
+🎂 = HB
+</button>
+
+<button onclick="showResult(3)">
+🎉 = BD
+</button>
+</div>
+
+<!-- Screen 3 -->
+<div class="screen" id="s3">
+<div class="result">
+Excellent! Scientific creativity detected.
+</div>
+
+<div class="question">
+Which lab tool would you choose to find hidden birthday surprises?
+</div>
+
+<button onclick="showResult(4)">
+🔬 Microscope
+</button>
+
+<button onclick="showResult(4)">
+🧪 Test Tube
+</button>
+</div>
+
+<!-- Screen 4 -->
+<div class="screen" id="s4">
+<div class="result">
+Great choice. Research level: impressive.
+</div>
+
+<div class="question">
+What is the most important ingredient for a successful scientist?
+</div>
+
+<button onclick="showResult(5)">
+Curiosity 🔍
+</button>
+
+<button onclick="showResult(5)">
+Coffee ☕
+</button>
+</div>
+
+<!-- Screen 5 -->
+<div class="screen" id="s5">
+<div class="result">
+Correct answer: Curiosity... although coffee deserves honorable mention.
+</div>
+
+<div class="question">
+Final Science Question! 🧬
+<br><br>
+Which letters represent the four bases of DNA?
+</div>
+
+<button onclick="showResult(6)">
+A, T, G, C
+</button>
+
+<button onclick="showResult(6)">
+A, B, C, D
+</button>
+</div>
+
+<!-- Final Screen -->
+<div class="screen" id="s6">
+
+<h1 class="glow">🎂 HAPPY BIRTHDAY MR. SCIENTIST 🎂</h1>
+
+<div class="final-message">
+<p>
+
+Congratulations! You successfully completed the birthday experiment.
+
+Today is not just another day on the calendar.
+It is a reminder that the world became a little more interesting the day you arrived.
+
+I may not know you very well, but I do know that science is not an easy path  and anyone who chooses it deserves respect for their curiossiyy... patience ...and determination..
+
+Just like every great discovery begins with a simple question.. every great year begins with a single day... and today is yours.
+
+May this new year of your life be filled with exciting discoveries ^^ successful exams ... brilliant ideas ... unforgettable memories, and moments that make you proud of how far you've come.
+
+May your happiness multiply faster than bacteria in a perfect culture medium ^^ 
+May your problems disappear faster than unstable isotopes 🤪
+
+Happy Birthday:)) Mr Scientist
+May your future be bright
+your experiments successfullll
+your coffee warm^^
+your grades high..
+and your cakedelicious hhehe
+
+🧬 ⚛️ 🔬 🧪 🌟 🎂
+
+Have an amazing birthday!
+</p>
+</div>
+
+</div>
+
+<script>
+function next(id){
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+document.getElementById('s'+id).classList.add('active');
+}
+
+function showResult(id){
+setTimeout(()=>{
+next(id);
+},500);
+}
+</script>
+
+</body>
+</html>
